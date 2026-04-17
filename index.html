@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="Description" content="Template portafolio desarrollador UI/UX " />
-    <title>Portafolio</title>
+    <meta name="description" content="Jhon Rodriguez — Desarrollador Web & Especialista en Automatización IA" />
+    <title>Jhon Rodriguez | Dev & IA</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="assets/Logo.png">
-
     <link rel="stylesheet" href="https://unpkg.com/primeflex@^3/primeflex.css">
-    <link rel="stylesheet" href="https://unpkg.com/primeflex/themes/saga-blue.css">
     <script src="https://kit.fontawesome.com/b3f17f1dac.js" crossorigin="anonymous"></script>
 </head>
 
@@ -20,10 +18,9 @@
     <header class="flex w-full fixed top-0 z-1">
         <nav class="flex justify-content-between w-full navbar">
             <span class="logo cursor-pointer" onclick="scrollToSection('home')">
-                <img src="./assets/Logo.png" alt="Logo portafolio" width="50" height="50">
+                <img src="./assets/Logo.png" alt="Logo" width="50" height="50">
             </span>
-            <input type="checkbox" aria-label="Checkbox para mostrar y quitar hamburger menu"
-                class="checkbox xl:hidden">
+            <input type="checkbox" aria-label="Menú hamburguesa" class="checkbox xl:hidden">
             <div class="hamburger__lines">
                 <span class="line line1"></span>
                 <span class="line line2"></span>
@@ -32,255 +29,283 @@
             <div class="header__info flex align-items-center gap-3">
                 <ul class="flex flex-column xl:flex-row list-none">
                     <li onclick="scrollToSection('about')">Sobre mí</li>
-                    <li onclick="scrollToSection('services')">Conocimientos</li>
-                    <li onclick="scrollToSection('portfolio')">Portafolio</li>
+                    <li onclick="scrollToSection('skills')">Habilidades</li>
+                    <li onclick="scrollToSection('portfolio')">Proyectos</li>
                     <li onclick="scrollToSection('contact')">Contacto</li>
                 </ul>
-                <div class="hireMe__button pt-4">
-                    <a href="mailTo:j.rodriguez795@pascualbravo.edu.co" aria-label="Enviar mensaje al correo"
-                        class="cursor-pointer no-underline border-round-lg text-xl xl:text-sm">Contratame</a>
+                <div class="hireMe__button">
+                    <a href="http://wa.me/573012721071" class="cursor-pointer no-underline border-round-lg">Contáctame</a>
                 </div>
             </div>
         </nav>
     </header>
-    <!--HOME PAGE -->
+
+    <!-- HOME -->
     <div class="container">
-        <section id="home"
-            class="home__page flex align-items-center justify-content-center xl\:justify-content-between grid grid-nogutter gap-4">
+        <section id="home" class="home__page flex align-items-center justify-content-center xl:justify-content-between grid grid-nogutter gap-4">
             <div class="left__content col-12 xl:col-6">
-                <div class="message__bubble triangle mb-4 md:mb-2">
-                    <div class="message__text p-2 sm:p-3 text-center">
-                        <p>Hola, Yo soy</p>
-                    </div>
+                <div class="eyebrow__badge mb-4">
+                    <span class="badge__dot"></span>
+                    Disponible para proyectos
                 </div>
-                <h1 class="text-3xl sm:text-5xl md:text-7xl">Jhon Rodriguez Montoya</h1>
-                <p class="text-gray-500">
-                    desarrollador web 
+                <h1 class="hero__name">Jhon Rodriguez<span class="accent__dot">.</span></h1>
+                <p class="hero__role">Desarrollador Web &amp; <span class="grad-text">Especialista en IA</span></p>
+                <p class="hero__desc">
+                    Construyo software, automatizo procesos y desarrollo agentes de IA que hacen que los negocios escalen solos.
                 </p>
-                <div class="home__buttons flex align-items-center gap-2 mt-6">
-                    <a href="./assets/CURRICULUM.pdf" aria-label="Descargar curriculum"
-                        class="cursor-pointer border-round-lg no-underline" download>Descargar CV</a>
-                    <button onclick="scrollToSection('portfolio')" aria-label="Deslizar a sección portafolio para mostrar mis trabajos"
-                        class="cursor-pointer border-round-lg">Mi trabajo</button>
+                <div class="home__buttons flex align-items-center gap-3 mt-5">
+                    <a href="./assets/CURRICULUM.pdf" class="btn__primary cursor-pointer border-round-lg no-underline" download>
+                        <i class="fa-solid fa-download"></i> Descargar CV
+                    </a>
+                    <button onclick="scrollToSection('portfolio')" class="btn__outline cursor-pointer border-round-lg">
+                        Ver proyectos
+                    </button>
+                </div>
+                <div class="social__quick mt-5 flex gap-3">
+                    <a href="https://github.com/JhonRodriguezM" target="_blank" class="social__icon" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jhon-rodrigues-a7851a217/" target="_blank" class="social__icon" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/contacto.impulseai.digital/" target="_blank" class="social__icon" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
                 </div>
             </div>
             <div class="right__content col-9 sm:col-6 xl:col-5">
-                <img src="./assets/foto-perfil.png" alt="Foto perfil" width="100" height="100">
-            </div>
-        </section>
-        <!--ABOUT ME-->
-        <section id="about" class="about__me w-full min-h-screen flex align-items-center">
-            <div class="aboutMe__content min-h-full flex flex-column md:flex-row pt-8 md:pt-0">
-                <div class="aboutMe__info col-12 md:col-6 md:pr-6 pt-0">
-                    <h1 class="text-3xl md:text-5xl">Sobre mí</h1>
-                    <p class="text-gray-500">Me considero una persona responsable, creativa y sociable, con capacidad de liderazgo, facilidad de adaptación y habilidad para trabajar en equipo, incluso bajo presión. Tengo iniciativa para resolver problemas de manera efectiva y para apoyar a mis compañeros siempre que sea necesario, con el fin de cumplir los objetivos y metas trazados por la empresa.</p>
-                    <div class="knowledge flex flex-column gap-3 mt-5">
-                        <p>Css 90%</p>
-                        <div class="progress__bar progress__css">
-                            <span></span>
-                        </div>
-                        <p>HTML 85%</p>
-                        <div class="progress__bar progress__html">
-                            <span></span>
-                        </div>
-                        <p>JavaScript 80%</p>
-                        <div class="progress__bar progress__javascript">
-                            <span></span>
-                        </div>
-                        <p>SQL 75%</p>
-                        <div class="progress__bar progress__sql">
-                            <span></span>
-                        </div><p>Git 80%</p>
-                        <div class="progress__bar progress__git">
-                            <span></span>
+                <div class="profile__wrapper">
+                    <div class="profile__glow"></div>
+                    <img src="./assets/foto-perfil.png" alt="Jhon Rodriguez" class="profile__img">
+                    <div class="profile__badge">
+                        <span class="badge__icon">⚡</span>
+                        <div>
+                            <p class="badge__title">Automatización IA</p>
+                            <p class="badge__sub">n8n · OpenAI · WhatsApp</p>
                         </div>
                     </div>
-                    <div class="hireMe__button pt-4">
-                        <a href="mailTo:john@email.com" aria-label="Enviar mensaje al correo"
-                            class="cursor-pointer no-underline border-round-lg">Contratame</a>
-                    </div>
-
-                </div>
-                <div class="image col p-0 mt-6 md:mt-0">
-                    <img src="./assets/freelancer.jpg" alt="Foto relacionado a acerca de mí" width="100" height="100">
                 </div>
             </div>
         </section>
     </div>
-    <!--FREE LANCER SECTION -->
-    <section class="freelancer mb-4 mt-4 min-w-full flex flex-column justify-content-center align-items-center">
-        <h1 class="text-center">FORMACIÓN ACADÉMICA</h1>
-        <h3 class="text-center">*Institucion Universitaria Pascual Bravo</h3>
-        <p class="text-sm">Gestion mantenimiento aeronautico| Julio 2017 - Noviembre 2018</p>
-        <h3 class="text-center">*Institucion Universitaria Pascual Bravo</h3>
-        <p class="text-sm">Desarrollo de software| Enero 2021 - actualidad</p>
+
+    <!-- ABOUT ME -->
+    <section class="about__band">
+        <div class="container">
+            <section id="about" class="about__me w-full flex align-items-center">
+                <div class="aboutMe__content min-h-full flex flex-column md:flex-row pt-8 md:pt-0 gap-6">
+                    <div class="aboutMe__info col-12 md:col-6 pt-0">
+                        <p class="section__eyebrow">Sobre mí</p>
+                        <h2 class="section__title">Construyo soluciones que <span class="grad-text">funcionan de verdad</span></h2>
+                        <p class="about__text">
+                            Soy desarrollador web y especialista en automatización con IA, con experiencia en la creación de agentes inteligentes, workflows con n8n y desarrollo de software a medida. Combino código, creatividad y tecnología para que los negocios operen mejor.
+                        </p>
+                        <p class="about__text mt-3">
+                            Responsable, creativo y con capacidad de liderazgo. Me adapto rápido y disfruto resolver problemas complejos en equipo.
+                        </p>
+                        <div class="edu__block mt-5">
+                            <p class="section__eyebrow">Formación</p>
+                            <div class="edu__item">
+                                <span class="edu__dot"></span>
+                                <div>
+                                    <p class="edu__career">Desarrollo de Software</p>
+                                    <p class="edu__school">Inst. Universitaria Pascual Bravo · 2021 – actualidad</p>
+                                </div>
+                            </div>
+                            <div class="edu__item">
+                                <span class="edu__dot"></span>
+                                <div>
+                                    <p class="edu__career">Gestión Mantenimiento Aeronáutico</p>
+                                    <p class="edu__school">Inst. Universitaria Pascual Bravo · 2017 – 2018</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hireMe__button mt-5">
+                            <a href="http://wa.me/573012721071" class="cursor-pointer no-underline border-round-lg">Hablemos</a>
+                        </div>
+                    </div>
+                    <div class="about__image col p-0 mt-6 md:mt-0">
+                        <img src="./assets/about-me.jpeg" alt="Jhon Rodriguez trabajando">
+                    </div>
+                </div>
+            </section>
+        </div>
     </section>
-    <!--SERVICES -->
+
+    <!-- SKILLS -->
     <div class="container">
-        <section id="services" class="services min-h-full w-full pb-7">
-            <div class="services__title flex flex-column gap-3 text-center">
-                <h1 class="text-3xl md:text-5xl">Tecnologias</h1>
-                <p class="text-gray-400 text-sm md:text-base">
-                    EStos son algunas de las herramientas y tecnologias con las que he trabajado
-                </p>
+        <section id="skills" class="skills__section pb-8 pt-8">
+            <div class="text-center mb-7">
+                <p class="section__eyebrow">Tecnologías</p>
+                <h2 class="section__title">Mi stack de <span class="grad-text">herramientas</span></h2>
             </div>
-            <div class="services__card w-full grid grid-nogutter mt-7 gap-5">
-                <div class="card flex align-items-center col-12 sm:col-6 lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center">
-                        <i class="fa-brands fa-html5"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>HTML</p>
-                    </div>
+
+            <div class="skills__grid">
+                <div class="skill__card">
+                    <div class="skill__icon skill__icon--orange"><i class="fa-brands fa-html5"></i></div>
+                    <p class="skill__name">HTML5</p>
                 </div>
-                <div class="card flex align-items-center col-12 sm:col lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fa-brands fa-js"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>JavaScript</p>
-                    </div>
+                <div class="skill__card">
+                    <div class="skill__icon skill__icon--blue"><i class="fa-brands fa-css3-alt"></i></div>
+                    <p class="skill__name">CSS3</p>
                 </div>
-                <div class="card flex align-items-center col-12 sm:col-6 md:col-3 lg:col gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fa-brands fa-css3-alt"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>Css</p>
-                    </div>
+                <div class="skill__card">
+                    <div class="skill__icon skill__icon--yellow"><i class="fa-brands fa-js"></i></div>
+                    <p class="skill__name">JavaScript</p>
                 </div>
-                <div class="card flex align-items-center col-12 sm:col md:col lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fa-brands fa-github"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>GitHub</p>
-                    </div>
+                <div class="skill__card">
+                    <div class="skill__icon skill__icon--gray"><i class="fa-brands fa-github"></i></div>
+                    <p class="skill__name">GitHub</p>
                 </div>
-                <div class="card flex align-items-center col-12 sm:col-6 md:col-4 lg:col-4 gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>Desarrollo Móvil</p>
-                    </div>
+                <div class="skill__card">
+                    <div class="skill__icon skill__icon--green"><i class="fa-solid fa-bolt"></i></div>
+                    <p class="skill__name">n8n</p>
                 </div>
-                <div class="card flex align-items-center col-12 sm:col md:col-4 lg:col gap-3 p-2">
-                    <div class="service__logo flex align-items-center justify-content-center ">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <div class="service__name">
-                        <p>Desarrollo web</p>
-                    </div>
+                <div class="skill__card">
+                    <div class="skill__icon skill__icon--purple"><i class="fa-solid fa-brain"></i></div>
+                    <p class="skill__name">OpenAI / IA</p>
+                </div>
+                <div class="skill__card">
+                    <div class="skill__icon skill__icon--teal"><i class="fa-brands fa-whatsapp"></i></div>
+                    <p class="skill__name">WhatsApp API</p>
+                </div>
+                <div class="skill__card">
+                    <div class="skill__icon skill__icon--red"><i class="fa-solid fa-database"></i></div>
+                    <p class="skill__name">SQL</p>
+                </div>
+                <div class="skill__card">
+                    <div class="skill__icon skill__icon--blue"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <p class="skill__name">Desarrollo Móvil</p>
+                </div>
+                <div class="skill__card">
+                    <div class="skill__icon skill__icon--orange"><i class="fa-solid fa-code"></i></div>
+                    <p class="skill__name">Desarrollo Web</p>
                 </div>
             </div>
         </section>
 
-        <!--PORTFOLIO -->
+        <!-- PORTFOLIO -->
         <section id="portfolio" class="portfolio min-h-full w-full pb-8 pt-8">
-            <div class="portfolio__title flex flex-column gap-3 text-center">
-                <h1 class="text-3xl md:text-5xl">Mi portafolio</h1>
-                <p class="text-gray-400 text-sm md:text-base">
-                    Estos son algunos de mis trabajos recientes
-                </p>
+            <div class="text-center mb-7">
+                <p class="section__eyebrow">Proyectos</p>
+                <h2 class="section__title">Trabajo <span class="grad-text">reciente</span></h2>
             </div>
             <div class="portfolio__gallery">
-                <div class="gallery__categories mb-5 mt-5">
+                <div class="gallery__categories mb-6">
                     <ul class="flex list-none flex-wrap justify-content-center gap-3">
                         <li class="filter-item active" data-filter="all">Todos</li>
-                        <li class="filter-item " data-filter="mascotienda">Mascotienda</li>
-                        <li class="filter-item " data-filter="stockMarket">stock market</li>
+                        <li class="filter-item" data-filter="impulse">ImpulseAI</li>
+                        <li class="filter-item" data-filter="mascotienda">Mascotienda</li>
+                        <li class="filter-item" data-filter="stockMarket">Stock Market</li>
                     </ul>
                 </div>
-                <div class="proyect__gallery flex justify-content-center align-items-center flex-wrap gap-3">
-                    <div class="project__card mascotienda">
-                        <img src="./assets/proyecto-1.png" alt="">
+                <div class="proyect__gallery flex justify-content-center align-items-center flex-wrap gap-4">
+                    <div class="project__card impulse">
+                        <img src="./assets/proyecto-3.png" alt="ImpulseAI Digital">
                         <div class="overlay"></div>
-                        <div
-                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <span class="project__tag">IA · Automatización</span>
+                            <h2>ImpulseAI & Digital</h2>
+                            <p>Landing page de agencia de automatización IA y marketing digital. Tema oscuro, animaciones y diseño moderno.</p>
+                            <a href="https://impulseai-digital.vercel.app" target="_blank" class="project__link">
+                                Ver proyecto <i class="fa-solid fa-arrow-right-long"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project__card mascotienda">
+                        <img src="./assets/proyecto-1.png" alt="Mascotienda">
+                        <div class="overlay"></div>
+                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <span class="project__tag">E-commerce · UX</span>
                             <h2>Mascotienda</h2>
-                            <p>Mascotienda es una aplicación diseñada para facilitar la compra de productos y servicios para mascotas. Permite a los usuarios explorar una amplia variedad de artículos como alimentos, juguetes, accesorios y productos de cuidado, además de agendar servicios como baño o veterinaria. La app ofrece una experiencia sencilla, rápida y organizada para que los dueños de mascotas encuentren todo lo que necesitan en un solo lugar.
-                            </p>
-                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                            <p>App para compra de productos y servicios para mascotas. Explora artículos, agenda baño o veterinaria con una experiencia sencilla y rápida.</p>
+                            <span class="project__link">Ver proyecto <i class="fa-solid fa-arrow-right-long"></i></span>
                         </div>
                     </div>
                     <div class="project__card stockMarket">
-                        <img src="./assets/proyecto-2.png" alt="">
+                        <img src="./assets/proyecto-2.png" alt="Stock Market">
                         <div class="overlay"></div>
-                        <div
-                            class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
-                            <h2>Stock market</h2>
-                            <p>Stock Market es una aplicación que permite monitorear el comportamiento de diferentes acciones en tiempo real. Ofrece gráficos claros, datos actualizados y herramientas de análisis para ayudar a los usuarios a tomar mejores decisiones de inversión. Con una interfaz sencilla e intuitiva, la app facilita el seguimiento del mercado y la gestión de portafolios de forma rápida y accesible.  
-                            </p>
-                            <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                        <div class="project__info flex w-full flex-column justify-content-center align-items-center text-center">
+                            <span class="project__tag">Finanzas · Dashboard</span>
+                            <h2>Stock Market</h2>
+                            <p>Monitorea el comportamiento de acciones en tiempo real. Gráficos, datos actualizados y análisis para mejores decisiones de inversión.</p>
+                            <span class="project__link">Ver proyecto <i class="fa-solid fa-arrow-right-long"></i></span>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </section>
-        <!--FOOTER -->
-        <footer id="contact" class="min-h-full w-full flex grid col-12 justify-content-center pb-8 pt-8 lg:text-center">
-            <div class="social__media col-12 md:col-4 flex flex-column justify-content-between">
-                <h3>Redes sociales</h3>
-                <p>Auténtico e innovador</p>
-                <p>Desarrollo lo que necesitas, con un enfoque en usabilidad y rendimiento</p>
-                <div class="social__mediaIcons mt-5 flex lg:justify-content-center gap-3">
-                    <a href="https://github.com/JhonRodriguezM" target="_blank" aria-label="Ir a facebook">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                    </a>
-                    <a href="https://www.linkedin.com/in/jhon-rodrigues-a7851a217/" target="_blank" aria-label="Ir a linkedin">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                    </a>
+
+        <!-- FOOTER / CONTACT -->
+        <footer id="contact" class="footer__section w-full pb-8 pt-8">
+            <div class="text-center mb-7">
+                <p class="section__eyebrow">Contacto</p>
+                <h2 class="section__title">Trabajemos <span class="grad-text">juntos</span></h2>
+                <p class="footer__sub">¿Tienes un proyecto en mente? Hablemos.</p>
+            </div>
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Redes sociales</h4>
+                    <p class="footer__col-sub">Auténtico e innovador</p>
+                    <div class="social__mediaIcons mt-4 flex gap-3">
+                        <a href="https://github.com/JhonRodriguezM" target="_blank" class="social__icon" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jhon-rodrigues-a7851a217/" target="_blank" class="social__icon" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com/contacto.impulseai.digital/" target="_blank" class="social__icon" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Contacto directo</h4>
+                    <div class="contact__item">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <a href="http://wa.me/573012721071">+57 301 272 1071</a>
+                    </div>
+                    <div class="contact__item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:jhon.rodriguez.dev@gmail.com">jhon.rodriguez.dev@gmail.com</a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Servicios</h4>
+                    <p>Desarrollo Web</p>
+                    <p>Automatización con n8n</p>
+                    <p>Agentes IA</p>
+                    <p>Marketing Digital</p>
                 </div>
             </div>
-            <div class="contact col-12 sm:col-6 sm:pt-0 md:pt-2 md:col-4 flex flex-column justify-content-between md:align-items-center">
-                <h3>Contacto</h3>
-                <div class="phone__number flex align-items-center gap-2">
-                    <i class="fa-solid fa-phone"></i>
-                    <p>+57 3012721071</p>
-                </div>
-                <div class="email flex align-items-center gap-2">
-                    <i class="fa-solid fa-envelope"></i>
-                    <p>jhon.rodriguez.dev@gmail.com</p>
-                </div>
-                
-            </div>
-            <div class="my__services col-12 sm:col-6 sm:p-0 md:col-4 md:pt-2 md:align-items-center flex flex-column justify-content-between">
-                <h3>Mis Servicios</h3>
-                <p>Desarrollo web</p>
-                <p>Desarrollo móvil</p>
-                <P>Marketing Digital</P>
-            </div>
+            <p class="footer__copy">© 2026 Jhon Rodriguez — Hecho con <span class="grad-text">pasión</span> en Colombia.</p>
         </footer>
     </div>
 
-</body>
-<script>
-    const filterContainer = document.querySelector(".gallery__categories");
-    const galleryItems = document.querySelectorAll(".project__card");
+    <script>
+        const filterContainer = document.querySelector(".gallery__categories");
+        const galleryItems = document.querySelectorAll(".project__card");
 
-    filterContainer.addEventListener("click", (event) => {
-        if (event.target.classList.contains("filter-item")) {
-            filterContainer.querySelector(".active").classList.remove("active");
-            event.target.classList.add("active")
-            const filterValue = event.target.getAttribute("data-filter")
-            galleryItems.forEach(item => {
-                if (item.classList.contains(filterValue) || filterValue === "all") {
-                    item.classList.remove("hide")
-                    item.classList.add("show")
-                } else {
-                    item.classList.remove("show")
-                    item.classList.add("hide")
-                }
-            })
+        filterContainer.addEventListener("click", (event) => {
+            if (event.target.classList.contains("filter-item")) {
+                filterContainer.querySelector(".active").classList.remove("active");
+                event.target.classList.add("active");
+                const filterValue = event.target.getAttribute("data-filter");
+                galleryItems.forEach(item => {
+                    if (item.classList.contains(filterValue) || filterValue === "all") {
+                        item.classList.remove("hide");
+                        item.classList.add("show");
+                    } else {
+                        item.classList.remove("show");
+                        item.classList.add("hide");
+                    }
+                });
+            }
+        });
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
         }
-    })
-
-    function scrollToSection(sectionId){
-        document.getElementById(sectionId).scrollIntoView({behavior:"smooth"})
-    }
-</script>
-
+    </script>
+</body>
 </html>
