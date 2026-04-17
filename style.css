@@ -50,11 +50,12 @@ body::-webkit-scrollbar-track { background: var(--bg-soft); }
 /* ===== NAVBAR ===== */
 .navbar {
     padding: 0 10rem;
-    background: rgba(8,8,8,0.85);
+    background: rgba(8,8,8,0.95);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
     position: relative;
+    z-index: 50;
 }
 
 @media screen and (max-width: 1200px) { .navbar { padding: 0 2rem; } }
@@ -194,8 +195,9 @@ body::-webkit-scrollbar-track { background: var(--bg-soft); }
 .right__content { display: flex; justify-content: center; align-items: center; }
 .profile__wrapper {
     position: relative;
-    width: min(280px, 90%);
+    width: min(240px, 80%);
     flex-shrink: 0;
+    margin-top: 60px;
 }
 .profile__glow {
     position: absolute; top: -10%; left: 50%;
