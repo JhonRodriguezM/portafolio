@@ -130,6 +130,7 @@ body::-webkit-scrollbar-track { background: var(--bg-soft); }
 .home__page {
     height: 100vh; min-height: 700px;
     width: 100%; position: relative;
+    overflow: hidden;
 }
 
 .eyebrow__badge {
@@ -190,9 +191,11 @@ body::-webkit-scrollbar-track { background: var(--bg-soft); }
 .social__quick a { text-decoration: none; }
 
 /* Profile */
-.right__content { display: flex; justify-content: center; }
+.right__content { display: flex; justify-content: center; align-items: center; }
 .profile__wrapper {
-    position: relative; width: min(340px, 100%);
+    position: relative;
+    width: min(280px, 90%);
+    flex-shrink: 0;
 }
 .profile__glow {
     position: absolute; top: -10%; left: 50%;
@@ -202,19 +205,23 @@ body::-webkit-scrollbar-track { background: var(--bg-soft); }
     filter: blur(50px); z-index: 0; pointer-events: none;
 }
 .profile__img {
-    width: 100%; aspect-ratio: 1/1;
+    width: 100%;
+    aspect-ratio: 1/1;
     border-radius: 50%;
-    object-fit: cover; object-position: top center;
+    object-fit: cover;
+    object-position: center 15%;
     border: 3px solid rgba(255,90,54,0.35);
     position: relative; z-index: 1;
     box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    display: block;
 }
 .profile__badge {
-    position: absolute; bottom: -10px; right: -10px;
+    position: absolute; bottom: -10px; right: -14px;
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: 12px; padding: 10px 14px;
     display: flex; align-items: center; gap: 10px;
     z-index: 2; box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    white-space: nowrap;
 }
 .badge__icon { font-size: 1.3rem; }
 .badge__title { font-size: 0.78rem; font-weight: 600; margin: 0; }
