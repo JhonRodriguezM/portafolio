@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida — Jhon Rodriguez</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --dark: #1a1a2e;
+            --accent: #e84545;
+            --gray: #6b7280;
+            --light-gray: #f3f4f6;
+            --border: #e5e7eb;
+            --text: #1f2937;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 10pt;
+            color: var(--text);
+            background: #fff;
+            line-height: 1.5;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 72mm 1fr;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            background: var(--dark);
+            color: #fff;
+            padding: 32px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+
+        .profile__photo {
+            width: 110px; height: 110px;
+            border-radius: 50%;
+            object-fit: cover; object-position: center 10%;
+            border: 3px solid var(--accent);
+            display: block; margin: 0 auto;
+        }
+
+        .sidebar__name { text-align: center; margin-top: 12px; }
+        .sidebar__name h1 { font-size: 13pt; font-weight: 700; line-height: 1.2; }
+        .sidebar__name p { font-size: 8pt; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; text-transform: uppercase; margin-top: 6px; }
+
+        .sidebar__section h3 {
+            font-size: 8pt; font-weight: 700; letter-spacing: 0.1em;
+            text-transform: uppercase; color: var(--accent);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 6px; margin-bottom: 12px;
+        }
+
+        .contact__item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 8.5pt; color: rgba(255,255,255,0.8); }
+        .contact__item a { color: rgba(255,255,255,0.8); text-decoration: none; word-break: break-all; }
+
+        .skill__group { margin-bottom: 12px; }
+        .skill__group-title { font-size: 8pt; font-weight: 600; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 6px; }
+        .skill__tags { display: flex; flex-wrap: wrap; gap: 5px; }
+        .skill__tag { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); padding: 3px 8px; border-radius: 3px; font-size: 8pt; }
+        .skill__tag--accent { background: rgba(232,69,69,0.18); border-color: rgba(232,69,69,0.35); color: #ff9090; }
+
+        /* MAIN */
+        .main { padding: 28px 26px; display: flex; flex-direction: column; gap: 20px; }
+
+        .main__section h2 {
+            font-size: 11pt; font-weight: 700; color: var(--dark);
+            display: flex; align-items: center; gap: 8px;
+            margin-bottom: 12px; padding-bottom: 6px;
+            border-bottom: 2px solid var(--accent);
+        }
+        .section-icon {
+            background: var(--accent); color: #fff;
+            width: 20px; height: 20px; border-radius: 3px;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 9pt; flex-shrink: 0;
+        }
+
+        .summary__text { font-size: 9.5pt; color: #374151; line-height: 1.65; }
+
+        .exp__item { margin-bottom: 14px; }
+        .exp__item:last-child { margin-bottom: 0; }
+        .exp__header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+        .exp__title { font-size: 10pt; font-weight: 700; }
+        .exp__date { font-size: 8pt; color: var(--gray); white-space: nowrap; background: var(--light-gray); padding: 2px 8px; border-radius: 3px; flex-shrink: 0; }
+        .exp__company { font-size: 9pt; font-weight: 500; color: var(--accent); margin: 2px 0 6px; }
+        .exp__bullets { padding-left: 14px; }
+        .exp__bullets li { font-size: 9pt; color: #4b5563; margin-bottom: 3px; }
+
+        .edu__item { display: flex; gap: 10px; margin-bottom: 10px; }
+        .edu__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 3px; }
+        .edu__career { font-size: 9.5pt; font-weight: 600; }
+        .edu__school { font-size: 8.5pt; color: var(--gray); margin-top: 2px; }
+
+        .refs__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .ref__card { background: var(--light-gray); border-left: 3px solid var(--accent); padding: 10px 12px; border-radius: 0 5px 5px 0; }
+        .ref__name { font-size: 9pt; font-weight: 700; }
+        .ref__company { font-size: 8pt; color: var(--gray); margin: 2px 0; }
+        .ref__phone { font-size: 8.5pt; color: var(--accent); font-weight: 500; }
+
+        @media print {
+            body { background: #fff; }
+            .page { width: 100%; }
+            @page { margin: 0; size: A4; }
+        }
+        @media screen {
+            body { background: #e5e7eb; padding: 20px; }
+            .page { box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <aside class="sidebar">
+        <div>
+            <img src="./assets/foto-perfil.png" alt="Jhon Rodriguez" class="profile__photo">
+            <div class="sidebar__name">
+                <h1>Jhon A. Rodriguez Montoya</h1>
+                <p>Desarrollador de Software & IA</p>
+            </div>
+        </div>
+
+        <div class="sidebar__section">
+            <h3>Contacto</h3>
+            <div class="contact__item"><span>📍</span><span>Medellín, Colombia</span></div>
+            <div class="contact__item"><span>📱</span><span>301 272 1071</span></div>
+            <div class="contact__item"><span>✉️</span><a href="mailto:jhon.rodriguez.dev@gmail.com">jhon.rodriguez.dev@gmail.com</a></div>
+            <div class="contact__item"><span>🌐</span><a href="https://jhonrodriguezm.github.io/portafolio/">Portafolio</a></div>
+            <div class="contact__item"><span>💼</span><a href="https://www.linkedin.com/in/jhon-rodrigues-a7851a217/">LinkedIn</a></div>
+            <div class="contact__item"><span>🐙</span><a href="https://github.com/JhonRodriguezM">GitHub</a></div>
+        </div>
+
+        <div class="sidebar__section">
+            <h3>Habilidades</h3>
+            <div class="skill__group">
+                <p class="skill__group-title">IA & Automatización</p>
+                <div class="skill__tags">
+                    <span class="skill__tag skill__tag--accent">n8n</span>
+                    <span class="skill__tag skill__tag--accent">OpenAI</span>
+                    <span class="skill__tag skill__tag--accent">Agentes IA</span>
+                    <span class="skill__tag skill__tag--accent">WhatsApp API</span>
+                </div>
+            </div>
+            <div class="skill__group">
+                <p class="skill__group-title">Frontend</p>
+                <div class="skill__tags">
+                    <span class="skill__tag">HTML</span>
+                    <span class="skill__tag">CSS</span>
+                    <span class="skill__tag">JavaScript</span>
+                    <span class="skill__tag">React</span>
+                    <span class="skill__tag">Vue.js</span>
+                </div>
+            </div>
+            <div class="skill__group">
+                <p class="skill__group-title">Backend & BD</p>
+                <div class="skill__tags">
+                    <span class="skill__tag">C#</span>
+                    <span class="skill__tag">.NET</span>
+                    <span class="skill__tag">Node.js</span>
+                    <span class="skill__tag">SQL</span>
+                    <span class="skill__tag">Git</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar__section">
+            <h3>Competencias</h3>
+            <div class="skill__tags">
+                <span class="skill__tag">Resolución de problemas</span>
+                <span class="skill__tag">Trabajo en equipo</span>
+                <span class="skill__tag">Liderazgo</span>
+                <span class="skill__tag">Adaptabilidad</span>
+                <span class="skill__tag">Comunicación efectiva</span>
+                <span class="skill__tag">Pensamiento crítico</span>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main">
+
+        <div class="main__section">
+            <h2><span class="section-icon">👤</span> Resumen</h2>
+            <p class="summary__text">
+                Desarrollador de software con experiencia en automatización con IA, desarrollo web y fundador de <strong>ImpulseAI & Digital</strong>. Domino n8n, OpenAI, React, Vue.js, C# y Node.js. Combino habilidades técnicas con experiencia en atención al cliente y liderazgo de proyectos para construir soluciones que generan impacto real en los negocios.
+            </p>
+        </div>
+
+        <div class="main__section">
+            <h2><span class="section-icon">💼</span> Experiencia</h2>
+
+            <div class="exp__item">
+                <div class="exp__header">
+                    <div>
+                        <p class="exp__title">Fundador & Desarrollador</p>
+                        <p class="exp__company">ImpulseAI & Digital</p>
+                    </div>
+                    <span class="exp__date">2025 – actualidad</span>
+                </div>
+                <ul class="exp__bullets">
+                    <li>Diseño e implementación de agentes IA con OpenAI y WhatsApp Business API</li>
+                    <li>Automatización de procesos con n8n e integración de CRM, redes y formularios</li>
+                    <li>Desarrollo de software a medida y campañas de marketing digital para clientes</li>
+                    <li>Gestión comercial, propuestas técnicas y coordinación de proyectos</li>
+                </ul>
+            </div>
+
+            <div class="exp__item">
+                <div class="exp__header">
+                    <div>
+                        <p class="exp__title">Desarrollador de Software</p>
+                        <p class="exp__company">Crystal S.A.S</p>
+                    </div>
+                    <span class="exp__date">Ene 2025 – Jun 2025</span>
+                </div>
+                <ul class="exp__bullets">
+                    <li>Desarrollo y mantenimiento de soluciones de software interno</li>
+                    <li>Apoyo en análisis de seguridad informática y optimización de procesos</li>
+                </ul>
+            </div>
+
+            <div class="exp__item">
+                <div class="exp__header">
+                    <div>
+                        <p class="exp__title">Agente de Servicio al Cliente</p>
+                        <p class="exp__company">Teleperformance</p>
+                    </div>
+                    <span class="exp__date">Ene – Jun 2021</span>
+                </div>
+                <ul class="exp__bullets">
+                    <li>Atención al cliente, retención de usuarios y resolución de incidencias técnicas</li>
+                    <li>Manejo de indicadores de calidad y satisfacción del cliente</li>
+                </ul>
+            </div>
+
+            <div class="exp__item">
+                <div class="exp__header">
+                    <div>
+                        <p class="exp__title">Auxiliar Administrativo</p>
+                        <p class="exp__company">Excedentes Brass</p>
+                    </div>
+                    <span class="exp__date">Ago 2018 – Jun 2019</span>
+                </div>
+                <ul class="exp__bullets">
+                    <li>Atención al cliente, venta de material industrial y elaboración de reportes administrativos</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main__section">
+            <h2><span class="section-icon">🎓</span> Formación</h2>
+            <div class="edu__item">
+                <div class="edu__dot"></div>
+                <div><p class="edu__career">Ingeniería en Desarrollo de Software</p><p class="edu__school">Inst. Universitaria Pascual Bravo · 2026 – en curso</p></div>
+            </div>
+            <div class="edu__item">
+                <div class="edu__dot"></div>
+                <div><p class="edu__career">Tecnología en Desarrollo de Software</p><p class="edu__school">Inst. Universitaria Pascual Bravo · 2021 – 2025</p></div>
+            </div>
+            <div class="edu__item">
+                <div class="edu__dot"></div>
+                <div><p class="edu__career">Gestión Mantenimiento Aeronáutico</p><p class="edu__school">Inst. Universitaria Pascual Bravo · 2017 – 2018</p></div>
+            </div>
+        </div>
+
+        <div class="main__section">
+            <h2><span class="section-icon">⭐</span> Referencias</h2>
+            <div class="refs__grid">
+                <div class="ref__card">
+                    <p class="ref__name">David Menjura Mesa</p>
+                    <p class="ref__company">Analista de Calidad · OnelinkBPO</p>
+                    <p class="ref__phone">301 563 47 76</p>
+                </div>
+                <div class="ref__card">
+                    <p class="ref__name">Simón Padrón Gaviria</p>
+                    <p class="ref__company">Desarrollador Fullstack · Stefanini Latam</p>
+                    <p class="ref__phone">304 537 45 60</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</div>
+</body>
+</html>
